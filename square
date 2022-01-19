@@ -1,0 +1,32 @@
+import turtle as t
+import random
+import math
+b = 0
+a = 0
+t.speed(0)
+t.ht()
+t.up()
+t.goto(0,-150)
+t.down()
+t.circle(150)
+t.up()
+t.goto(-150,150)
+t.down()
+for i in range(0,4):
+    t.fd(300)
+    t.rt(90)
+for i in range(0,1000):
+    x = random.randint(-150,150)
+    y = random.randint(-150,150)
+    b = b+1
+    if math.sqrt((x*x)+(y*y))<150:
+        a = a+1
+    t.up()
+    t.goto(x,y)
+    t.down()
+    t.fd(1)
+    t.bk(-1)
+print(f'Точек в круге - {a}')
+p = (a/b)*((300*300)/(150*150))
+print(p)
+t.exitonclick()
